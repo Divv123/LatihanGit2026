@@ -11,5 +11,67 @@
         <p>Nama: Divy</p>
         <p>Umur: 20 Tahun</p>
     </div>
+
+    <hr>
+
+    <h2>Latihan DOM &amp; JavaScript</h2>
+
+    <!-- 1. getElementById -->
+    <h3>1. document.getElementById()</h3>
+    <div id="noSatu">Teks Awal</div>
+    <button onclick="ubahById();">2025081032</button>
+
+    <!-- 2. getElementsByClassName -->
+    <h3>2. document.getElementsByClassName()</h3>
+    <div class="awal">Teks Awal</div>
+    <button onclick="ubahByClass();">2025081032</button>
+
+    <!-- 3. getElementsByTagName -->
+    <h3>3. document.getElementsByTagName()</h3>
+    <p>Teks Awal</p>
+    <button onclick="ubahByTag();">2025081032</button>
+
+    <!-- 4. createElement -->
+    <h3>4. document.createElement()</h3>
+    <button onclick="tambahDiv();">Tambah DIV</button>
+    <div id="wadah"></div>
+
+    <!-- 5. document.write -->
+    <h3>5. document.write()</h3>
+    <p><em>Perhatian: document.write() setelah halaman selesai dimuat akan menimpa seluruh isi halaman (refresh untuk kembali).</em></p>
+    <button onclick="tulis();">2025081032</button>
+
+    <script>
+        // 1. getElementById
+        function ubahById() {
+            document.getElementById("noSatu").innerText = "Teks Baru (via ID)";
+        }
+
+        // 2. getElementsByClassName
+        function ubahByClass() {
+            document.getElementsByClassName("awal")[0].innerText = "Teks Baru (via Class)";
+        }
+
+        // 3. getElementsByTagName
+        function ubahByTag() {
+            var semuaP = document.getElementsByTagName("p");
+            semuaP[semuaP.length - 2].innerText = "Teks Baru (via Tag)";
+        }
+
+        // 4. createElement
+        function tambahDiv() {
+            var divTambahan = document.createElement("div");
+            divTambahan.id = "idDivBaru";
+            divTambahan.innerText = "ini DIV tambahan";
+            document.getElementById("wadah").appendChild(divTambahan);
+        }
+
+        // 5. document.write
+        function tulis() {
+            document.write("What is JavaScript?");
+            document.write("<p><br/>How to work with JavaScript?", "<br/>What is jQuery?</p>");
+            document.write("<div>Hello Divy</div>");
+        }
+    </script>
 </body>
 </html>
